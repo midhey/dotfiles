@@ -1,0 +1,8 @@
+# macOS system files
+.DS_Store
+
+# Vim/Neovim/IDE
+*.swp
+*.swo
+.idea/
+.vscode/
