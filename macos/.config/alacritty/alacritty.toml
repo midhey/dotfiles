@@ -1,4 +1,7 @@
-# ~/.config/alacritty/alacritty.toml
+# ---- Shell (только для WSL / Windows) ----
+# [terminal.shell]
+# program = "wsl"
+# args = ["--distribution", "Fedora", "--exec", "tmux", "new-session", "-A", "-s", "main"]
 
 [window]
 title = "Alacritty"
@@ -27,10 +30,6 @@ multiplier = 2                      # Скорость прокрутки кол
 
 [env]
 TERM = "xterm-256color"             # Переменная окружения для совместимости
-
-# [terminal.shell]
-# program = "/opt/homebrew/bin/tmux"  # Путь к tmux на macOS (Homebrew)
-# args = ["new-session", "-A", "-s", "main"]
 
 [cursor]
 style = "Block"                     # Стиль курсора
