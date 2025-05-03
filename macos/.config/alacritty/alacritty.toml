@@ -1,0 +1,104 @@
+# ~/.config/alacritty/alacritty.toml
+
+[window]
+title = "Alacritty"
+opacity = 1                         # Прозрачность окна
+decorations = "none"                # Минималистичные рамки
+dynamic_padding = true              # Адаптивные отступы
+startup_mode = "Fullscreen"         # Максимизируем окно при старте
+
+[window.padding]
+x = 12                              # Горизонтальные отступы
+y = 12                              # Вертикальные отступы
+
+[font]
+normal = { family = "CodeNewRoman Nerd Font Mono", style = "Regular" }
+bold = { family = "CodeNewRoman Nerd Font Mono", style = "Bold" }
+italic = { family = "CodeNewRoman Nerd Font Mono", style = "Italic" }
+size = 14                           # Размер шрифта
+
+[font.offset]
+x = 0                               # Горизонтальный отступ
+y = 0                               # Вертикальный отступ (должно быть целое число)
+
+[scrolling]
+history = 10000                     # Глубина истории
+multiplier = 2                      # Скорость прокрутки колесом
+
+[env]
+TERM = "xterm-256color"             # Переменная окружения для совместимости
+
+# [terminal.shell]
+# program = "/opt/homebrew/bin/tmux"  # Путь к tmux на macOS (Homebrew)
+# args = ["new-session", "-A", "-s", "main"]
+
+[cursor]
+style = "Block"                     # Стиль курсора
+blink_interval = 500                # Интервал мигания курсора
+
+[colors.primary]
+background = "#00171F"              # Фон (Base00)
+foreground = "#FFFFFF"              # Текст (Base07)
+
+[colors.cursor]
+text = "#00171F"                    # Цвет текста курсора
+cursor = "#FFFFFF"                  # Цвет курсора
+
+[colors.selection]
+text = "#B0BEC5"                    # Цвет выделенного текста
+background = "#344E5C"              # Фон выделения
+
+[colors.normal]
+black = "#00171F"                   # Base00
+red = "#E63946"                     # Красный
+green = "#7CB342"                   # Зелёный
+yellow = "#A47F00"                  # Жёлтый
+blue = "#2567E6"                    # Синий
+magenta = "#A82D96"                 # Магента
+cyan = "#2CA8A6"                    # Циан
+white = "#B0BEC5"                   # Белый (базовый)
+
+[colors.bright]
+black = "#002C36"                   # Base01
+red = "#E55A1D"                     # Оранжевый
+green = "#78909C"                   # Base04
+yellow = "#ECEFF1"                  # Base06
+blue = "#755DAF"                    # Фиолетовый
+magenta = "#A82D96"                 # Магента (ярче)
+cyan = "#2CA8A6"                    # Циан (ярче)
+white = "#FFFFFF"                   # Base07
+
+[colors.dim]
+black = "#00171F"                   # Затемнённый чёрный
+red = "#CC5965"                     # Затемнённый красный
+green = "#628B5D"                   # Затемнённый зелёный
+yellow = "#91794C"                  # Затемнённый жёлтый
+blue = "#3556A8"                    # Затемнённый синий
+magenta = "#8A3A7E"                 # Затемнённая магента
+cyan = "#1E6F6B"                    # Затемнённый циан
+white = "#8FA0A8"                   # Затемнённый белый
+
+[terminal]
+
+[keyboard]
+bindings = [
+  # --- Перемещение курсора ---
+  { key = "Left",  mods = "Alt",     chars = "\u001BB" }, # Alt+Left → Назад по слову
+  { key = "Right", mods = "Alt",     chars = "\u001BF" }, # Alt+Right → Вперёд по слову
+  { key = "Left",  mods = "Command", chars = "\u0001" },  # Cmd+Left → В начало строки (Ctrl+A)
+  { key = "Right", mods = "Command", chars = "\u0005" },  # Cmd+Right → В конец строки (Ctrl+E)
+
+  # --- Удаление текста ---
+  { key = "Back",  mods = "Command", chars = "\u0015" }, # Cmd+Backspace → Удалить всю строку (Ctrl+U)
+  { key = "Back",  mods = "Alt",     chars = "\u0017" }, # Alt+Backspace → Удалить предыдущее слово (Ctrl+W)
+  { key = "Delete", mods = "Alt",    chars = "\u001B[3;3~" }, # Alt+Delete → Удалить следующее слово
+
+  # --- Выделение текста ---
+  { key = "Left",  mods = "Shift",   chars = "\u001B[1;2D" }, # Shift+Left → Выделить влево
+  { key = "Right", mods = "Shift",   chars = "\u001B[1;2C" }, # Shift+Right → Выделить вправо
+  { key = "Up",    mods = "Shift",   chars = "\u001B[1;2A" }, # Shift+Up → Выделить вверх
+  { key = "Down",  mods = "Shift",   chars = "\u001B[1;2B" }, # Shift+Down → Выделить вниз
+  { key = "Left",  mods = "Command|Shift", chars = "\u001B[1;6D" }, # Cmd+Shift+Left → Выделить до начала строки
+  { key = "Right", mods = "Command|Shift", chars = "\u001B[1;6C" }, # Cmd+Shift+Right → Выделить до конца строки
+]
+
