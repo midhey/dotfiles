@@ -1,0 +1,98 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+    "keybindings": 
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "\u041a\u043e\u043c\u0430\u043d\u0434\u043d\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430"
+            },
+            {
+                "colorScheme": "Solarized Osaka",
+                "commandline": "wsl.exe -d Debian tmux new-session -A -s main",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "face": "CodeNewRoman Nerd Font Mono",
+                    "size": 14
+                },
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "name": "Debian",
+                "opacity": 100,
+                "padding": "12, 12",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#00171F",
+            "black": "#00171F",
+            "blue": "#2567E6",
+            "brightBlack": "#002C36",
+            "brightBlue": "#755DAF",
+            "brightCyan": "#2CA8A6",
+            "brightGreen": "#78909C",
+            "brightPurple": "#A82D96",
+            "brightRed": "#E55A1D",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#ECEFF1",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2CA8A6",
+            "foreground": "#FFFFFF",
+            "green": "#7CB342",
+            "name": "Solarized Osaka",
+            "purple": "#A82D96",
+            "red": "#E63946",
+            "selectionBackground": "#344E5C",
+            "white": "#B0BEC5",
+            "yellow": "#A47F00"
+        }
+    ],
+    "theme": "dark",
+    "themes": []
+}
