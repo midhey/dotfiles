@@ -7,7 +7,8 @@
     
 - **`.tmux.conf`** — конфигурация `tmux` с плагинами, Vim-режимом, продвинутыми биндингами и автоопределением платформы (clipboard)
     
-- **`alacritty.toml`** — кастомная конфигурация терминала `Alacritty` с цветовой схемой [`solarized-osaka`](https://github.com/craftzdog/solarized-osaka.nvim) и макросами для macOS, Linux и WSL
+- **`alacritty.toml`** — кастомная конфигурация терминала `Alacritty` с цветовой схемой [`solarized-osaka`](https://github.com/craftzdog/solarized-osaka.nvim) и макросами для macOS, Linux
+- **`settings.json`** — кастомная конфигурация терминала `Windows Terminal` с цветовой схемой [`solarized-osaka`](https://github.com/craftzdog/solarized-osaka.nvim) 
     
 
 ## 🖥️ Поддерживаемые платформы
@@ -68,5 +69,7 @@ dotfiles/
 ├── .config/
 │   └── alacritty/
 │       └── alacritty.toml
+├── WindowsTerminal/
+│   └── settings.json
 └── README.md
 ```
