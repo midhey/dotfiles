@@ -1,66 +1,56 @@
-Набор персональных конфигурационных файлов (`dotfiles`) для **macOS**, **Linux** и **WSL2**. 
-Предназначен для быстрого развёртывания окружения, синхронизации настроек между машинами и резервного копирования.
+# dotfiles
 
-## 📦 Состав
+Персональный набор конфигов для терминала и шелла. Использую под macOS, Linux и WSL2. Тут всё, что мне нужно для комфортной работы: zsh, tmux, alacritty, iTerm2, Windows Terminal.
 
-- **`.zshrc`** — оболочка `zsh` с Powerlevel10k, алиасами, безопасной логикой `$PATH`, автодополнением и платформенными настройками
-    
-- **`.tmux.conf`** — конфигурация `tmux` с плагинами, Vim-режимом, продвинутыми биндингами и автоопределением платформы (clipboard)
-    
-- **`alacritty.toml`** — кастомная конфигурация терминала `Alacritty` с цветовой схемой [`solarized-osaka`](https://github.com/craftzdog/solarized-osaka.nvim) и макросами для macOS, Linux
-- **`settings.json`** — кастомная конфигурация терминала `Windows Terminal` с цветовой схемой [`solarized-osaka`](https://github.com/craftzdog/solarized-osaka.nvim) 
-    
+## Состав
 
-## 🖥️ Поддерживаемые платформы
+- `.zshrc` — конфиг для zsh с Powerlevel10k, алиасами и автодополнением
+- `.tmux.conf` — настройка tmux с Vim-навигацией, автоклипбордом и плагинами
+- `alacritty.toml` — тема, биндинги и поведение для alacritty (**не обновляется**)
+- `settings.json` — конфиг для Windows Terminal
+- `iTerm2 State.itermexport` — полный экспорт всех настроек iTerm2
 
-|Платформа|Особенности|
-|---|---|
-|**macOS**|`pbcopy`, `tmux`, `nvm`, Powerlevel10k|
-|**Linux**|`xclip` или `xsel`, стандартные пути|
-|**WSL2**|Поддержка Windows clipboard (`clip.exe`), запуск Alacritty через `wsl` с `tmux`|
+## Поддерживаемые платформы
 
-## 🚀 Быстрый старт
+| Платформа | Особенности                                           |
+| --------- | ----------------------------------------------------- |
+| macOS     | pbcopy/pbpaste, tmux, nvm                             |
+| Linux     | xclip/xsel                                            |
+| WSL2      | clip.exe, запуск Windows Terminal на `wsl.exe` и tmux |
+
+## Быстрый старт
 
 ```bash
-# Клонируем репозиторий
 git clone https://github.com/midhey/dotfiles.git ~/dotfiles
 
-# Копируем конфиги вручную
+# копируем конфиги
 cp ~/dotfiles/.zshrc ~/.zshrc
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf
-mkdir -p ~/.config/alacritty && cp ~/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/
+
+# alacritty
+mkdir -p ~/.config/alacritty
+cp ~/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/
 ```
 
-> 💡 Для **Windows** (WSL) необходимо скопировать `alacritty.toml` в `C:\Users\<you>\AppData\Roaming\alacritty\alacritty.toml`
+Для Windows Terminal — копировать `settings.json` в `AppData\Local\Packages\...`
 
-## ⚙️ Зависимости и плагины
+Для iTerm2 — открыть настройки, вкладка `General`, и нажать "Import All Settings and Data..."
 
-### Zsh:
+## Zsh-плагины
 
-- [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh)
-    
-- [`powerlevel10k`](https://github.com/romkatv/powerlevel10k)
-    
-- [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions)
-    
-- [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting)
-    
+- oh-my-zsh
+- powerlevel10k
+- zsh-autosuggestions
+- zsh-syntax-highlighting
 
-### Tmux:
+## tmux-плагины
 
-- [`tpm`](https://github.com/tmux-plugins/tpm)
-    
-- `tmux-resurrect`, `tmux-continuum`, `tmux-yank`, `tmux-themepack`
-    
+- tpm
+- tmux-resurrect
+- tmux-continuum
+- tmux-yank
 
-## 🧠 Особенности
-
-- `.tmux.conf` использует `if-shell` для автоопределения платформы (macOS / Linux / WSL) и подключения нужной clipboard-команды
-    
-- В `alacritty.toml` платформенно-зависимые блоки просто комментируются/раскомментируются вручную
-    
-
-## 📁 Структура
+## Структура
 
 ```bash
 dotfiles/
@@ -71,5 +61,7 @@ dotfiles/
 │       └── alacritty.toml
 ├── WindowsTerminal/
 │   └── settings.json
+├── iterm2/
+│   └── iTerm2 State.itermexport
 └── README.md
 ```
